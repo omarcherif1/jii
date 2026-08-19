@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jii-black: #0a0a0a;
+  --color-jii-dark: #111111;
+  --color-jii-card: #141414;
+  --color-jii-red: #d42d2d;
+  --font-anton: "Anton", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-arabic: "Noto Sans Arabic", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-jii-black);
+}
+
+::selection {
+  background: #d42d2d;
+  color: #fff;
+}
+
+a {
+  color: #d42d2d;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff5252;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroTextUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+}
+
+.animate-hero-fade {
+  animation: heroFadeIn 1.4s ease both;
+}
+
+.animate-hero-text {
+  animation: heroTextUp 1s ease 0.3s both;
+}
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    115deg,
+    #1c1c1c 0px,
+    #1c1c1c 2px,
+    #0d0d0d 2px,
+    #0d0d0d 24px
+  );
+}
