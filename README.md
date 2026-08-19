@@ -1,16 +1,46 @@
-# React + Vite
+# JII Athletics
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site vitrine de la salle JII Athletics (Tunis) — React + Vite + Tailwind CSS.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React 19](https://react.dev/) + [Vite](https://vite.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com/) (`@tailwindcss/vite`)
+- Aucune dépendance UI externe : composants et styles maison
 
-## React Compiler
+## Démarrer
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+Autres commandes :
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run build     # build de production dans dist/
+npm run preview   # sert le build de production en local
+npm run lint       # oxlint
+```
+
+## Structure
+
+```
+src/
+  components/   composants de chaque section (Hero, Planning, Coaches, Gallery, Contact, ...)
+  data/         contenu du site (disciplines, plannings, coachs, tarifs, galerie...) — content.js
+  hooks/        hooks partagés (reveal au scroll, compteurs animés)
+  assets/       logo, photo hero, galerie, photos des coachs
+```
+
+La quasi-totalité du contenu (plannings par discipline, coachs, tarifs, galerie, témoignages) est centralisée dans [`src/data/content.js`](src/data/content.js) — c'est le premier endroit à modifier pour mettre à jour le site.
+
+### Planning
+
+Chaque discipline a son propre tableau hebdomadaire dans `disciplineSchedules` (clé = `id` de la discipline). Une discipline sans entrée affiche automatiquement "Planning bientôt disponible" dans la section Planning.
+
+## Assets
+
+- `src/assets/logo.png`, `src/assets/hero.jpg` — logo et photo du hero
+- `src/assets/galerie/` — photos de la section Galerie
+- `src/assets/coachs/` — photos des coachs (optionnelles : sans photo, un placeholder s'affiche)
