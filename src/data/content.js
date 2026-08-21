@@ -176,7 +176,7 @@ export const disciplineSchedules = {
 };
 
 import coachReda from "../assets/coachs/reda.png";
-import coachFarouk from "../assets/coachs/farouk.png";
+import coachFarouk from "../assets/coachs/farouk.jpeg";
 
 export const coaches = [
   {

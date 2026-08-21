@@ -14,12 +14,11 @@ function CoachCard({ coach, index }) {
       }}
     >
       <div
-        className={`relative overflow-hidden flex items-center justify-center text-center px-5 ${
+        className={`relative overflow-hidden flex items-center justify-center text-center px-5 h-[380px] sm:h-[320px] md:h-[280px] ${
           coach.photo ? "bg-black" : "diagonal-stripes"
         }`}
         style={{
           clipPath: "polygon(8% 0,100% 0,92% 100%,0 100%)",
-          height: "280px",
         }}
       >
         {coach.photo ? (
